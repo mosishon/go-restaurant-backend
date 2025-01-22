@@ -122,7 +122,7 @@ func UpdateFood() gin.HandlerFunc {
 		opt := options.UpdateOptions{
 			Upsert: &upsert,
 		}
-		res, err := menuCollection.UpdateOne(ctx, bson.M{"food_id": foodID}, bson.D{
+		res, err := foodCollection.UpdateOne(ctx, bson.M{"food_id": foodID}, bson.D{
 			{Key: "$set", Value: updateObj},
 		}, &opt)
 		if err != nil {

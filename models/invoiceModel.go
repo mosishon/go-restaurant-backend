@@ -27,3 +27,16 @@ type Invoice struct {
 	CreatedAt      time.Time          `json:"created_at"`
 	UpdatedAt      time.Time          `json:"updated_at"`
 }
+
+// TODO write tags
+
+type InvocieViewFormat struct {
+	InvoiceID      string
+	PaymentMethod  *PaymentMethodType
+	orderID        string
+	PaymentStatus  *PaymentStatusType
+	PaymentDue     interface{}
+	TableNumber    interface{}
+	PaymentDueDate time.Time
+	OrderDetails   interface{}
+}

@@ -1,6 +1,12 @@
 package controllers
 
-import "github.com/gin-gonic/gin"
+import (
+	"go-simple-shop/database"
+
+	"github.com/gin-gonic/gin"
+)
+
+var tableCollection = database.OpenCollection(database.Client, "table")
 
 func GetTables() gin.HandlerFunc {
 	return func(c *gin.Context) {
